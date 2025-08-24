@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USF BAIS — Cheat Sheets Index</title>
+<style>
+  :root{
+    --usf-green:#004529;
+    --usf-lime:#9ccb3b;
+    --ink:#1d232a;
+    --muted:#5b6368;
+    --paper:#fff;
+    --card:#f8faf9;
+    --code:#f6f8fa;
+    --shadow:0 6px 24px rgba(13,25,16,.08);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:linear-gradient(180deg,#f2f6f3 0,#eef4ef 100%);
+  }
+  header{
+    background:var(--usf-green);
+    color:#fff;
+    padding:28px 20px;
+    position:sticky; top:0; z-index:10;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  header .title{max-width:1200px;margin:0 auto}
+  header h1{margin:0;font-size:28px;letter-spacing:.3px}
+  header p{margin:6px 0 0;font-size:14px;opacity:.95}
+  .container{max-width:1200px;margin:24px auto;padding:0 18px}
+  .toolbar{
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    margin:0 0 18px 0;
+  }
+  .search{
+    flex:1 1 260px; display:flex; align-items:center; gap:8px;
+    background:#fff; border:1px solid #e3ebe3; border-radius:999px; padding:8px 12px;
+    box-shadow:var(--shadow);
+  }
+  .search input{
+    flex:1; border:0; outline:0; font-size:15px; background:transparent
+  }
+  .filters{display:flex; gap:8px; flex-wrap:wrap}
+  .chip{
+    border:1px solid #d9ead7; background:#eaf6ea; color:#163b1b;
+    padding:6px 10px; border-radius:999px; font-size:13px; cursor:pointer;
+    user-select:none;
+  }
+  .chip.active{background:var(--usf-lime); color:#0f2a12; border-color:#b9da73}
+  .grid{
+    display:grid; gap:16px;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+  @media (max-width: 980px){ .grid{grid-template-columns:repeat(2, minmax(0,1fr));} }
+  @media (max-width: 640px){ .grid{grid-template-columns:1fr;} }
+  .card{
+    background:var(--paper); border:1px solid #e7ece8; border-radius:var(--radius);
+    box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; min-height:180px;
+  }
+  .card .bar{background:var(--usf-lime); color:#0f2910; padding:10px 14px; font-weight:700; letter-spacing:.3px; display:flex; gap:10px; align-items:center}
+  .card .body{padding:14px}
+  .card .links{margin-top:auto; padding:12px 14px; background:var(--card); display:flex; gap:10px; flex-wrap:wrap}
+  .btn{
+    text-decoration:none; color:#0f2910; background:#e9f6e5; border:1px solid #d6e9cf; padding:8px 10px; border-radius:10px; font-size:14px; font-weight:600;
+  }
+  .btn:hover{background:#dff0d8}
+  .tag{display:inline-block; font-size:12px; color:#1f4723; background:#edf7ea; border:1px solid #d9ead7; padding:2px 8px; border-radius:999px; margin-right:6px}
+  footer{max-width:1200px;margin:30px auto 50px;padding:0 18px;color:var(--muted);font-size:13px}
+  .icon{font-size:18px}
+  .muted{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="title">
+    <h1>USF BAIS — Cheat Sheets Index</h1>
+    <p>Dr. Markum Reed • Muma College of Business • Quick references for Python, JS, Databases, BI, and Internship tools</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="toolbar">
+    <div class="search">
+      <span class="icon">🔎</span>
+      <input id="q" type="text" placeholder="Search cheat sheets, e.g., 'Pandas', 'SQL joins', 'DOM'">
+    </div>
+    <div class="filters">
+      <span class="chip" data-tag="all">All</span>
+      <span class="chip" data-tag="ISM2411">ISM2411</span>
+      <span class="chip" data-tag="ISM3232">ISM3232</span>
+      <span class="chip" data-tag="ISM4212">ISM4212</span>
+      <span class="chip" data-tag="ISM4402">ISM4402</span>
+      <span class="chip" data-tag="ISM4940">ISM4940</span>
+    </div>
+  </div>
+
+  <div id="cards" class="grid">
+
+    <!-- ISM2411: Python for Business -->
+    <article class="card" data-tags="ISM2411 python intro variables data-types print arithmetic debugging">
+      <div class="bar"><span class="icon">🐍</span> ISM2411 — Module 1: Python Basics</div>
+      <div class="body">
+        <div>
+          <span class="tag">ISM2411</span>
+          <span class="tag">Python</span>
+          <span class="tag">Beginner</span>
+        </div>
+        <p class="muted">Variables, types, print, arithmetic, comments, debugging, business examples.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="python/module_1_cheat_sheet.html">HTML</a>
+        <!-- <a class="btn" href="module1_cheat_sheet_rstudio_style.pdf">PDF (RStudio style)</a> -->
+        <!-- <a class="btn" href="module1_cheat_sheet_styled.pdf">PDF (Styled)</a> -->
+      </div>
+    </article>
+
+    <!-- ISM3232: Business Application Development -->
+    <article class="card" data-tags="ISM3232 javascript html css dom events functions">
+      <div class="bar"><span class="icon">⚛️</span> ISM3232 — JavaScript & Web Fundamentals</div>
+      <div class="body">
+        <div>
+          <span class="tag">ISM3232</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Web</span>
+        </div>
+        <p class="muted">Syntax, variables, functions, DOM, events, fetch basics, business UI patterns.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="#">HTML (coming soon)</a>
+        <!-- <a class="btn" href="#">PDF (coming soon)</a> -->
+      </div>
+    </article>
+
+    <!-- ISM4212: Database Design & Administration -->
+    <article class="card" data-tags="ISM4212 sql erd normalization joins indexes postgres mysql nosql">
+      <div class="bar"><span class="icon">🗄️</span> ISM4212 — SQL & Database Design</div>
+      <div class="body">
+        <div>
+          <span class="tag">ISM4212</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Database</span>
+        </div>
+        <p class="muted">ER models, normalization, SELECT/JOIN/AGG, indexes, transactions, backups.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="#">HTML (coming soon)</a>
+        <!-- <a class="btn" href="#">PDF (coming soon)</a> -->
+      </div>
+    </article>
+
+    <!-- ISM4402: Business Intelligence -->
+    <article class="card" data-tags="ISM4402 bi etl data-warehouse dimensional-modeling ssas dashboards mining">
+      <div class="bar"><span class="icon">📊</span> ISM4402 — Business Intelligence</div>
+      <div class="body">
+        <div>
+          <span class="tag">ISM4402</span>
+          <span class="tag">BI</span>
+          <span class="tag">ETL</span>
+        </div>
+        <p class="muted">ETL, star schemas, dimensional modeling, KPIs, dashboards, data mining basics.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="#">HTML (coming soon)</a>
+        <!-- <a class="btn" href="#">PDF (coming soon)</a> -->
+      </div>
+    </article>
+
+    <!-- ISM4940: Internship -->
+    <article class="card" data-tags="ISM4940 internship professionalism reporting communication tools">
+      <div class="bar"><span class="icon">🧭</span> ISM4940 — Internship Toolkit</div>
+      <div class="body">
+        <div>
+          <span class="tag">ISM4940</span>
+          <span class="tag">Career</span>
+          <span class="tag">Toolkit</span>
+        </div>
+        <p class="muted">Professional standards, reporting, communication, data tools used on the job.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="#">HTML (coming soon)</a>
+        <!-- <a class="btn" href="#">PDF (coming soon)</a> -->
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<footer>
+  © 2025 University of South Florida — Cheat Sheets Collection by Dr. Markum Reed. 
+  <span class="muted">Use the search bar or course chips to filter.</span>
+</footer>
+
+<script>
+  const q = document.getElementById('q');
+  const chips = document.querySelectorAll('.chip');
+  const cards = document.querySelectorAll('.card');
+  let activeTag = 'all';
+
+  function applyFilters(){
+    const term = (q.value || '').toLowerCase().trim();
+    cards.forEach(card => {
+      const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+      const matchTag = (activeTag === 'all') || tags.includes(activeTag.toLowerCase());
+      const matchTerm = !term || tags.includes(term);
+      card.style.display = (matchTag && matchTerm) ? '' : 'none';
+    });
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeTag = chip.dataset.tag;
+      applyFilters();
+    });
+  });
+
+  q.addEventListener('input', applyFilters);
+  // set default "All" active
+  document.querySelector('.chip[data-tag="all"]').classList.add('active');
+</script>
+</body>
+</html>
