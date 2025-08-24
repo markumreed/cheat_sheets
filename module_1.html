@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 1 Cheat Sheet — ISM2411: Python for Business</title>
+<style>
+  :root{
+    --usf-green:#004529;
+    --usf-lime:#9ccb3b;
+    --ink:#1c1e21;
+    --muted:#5a5f63;
+    --paper:#ffffff;
+    --code-bg:#f6f8fa;
+    --card-shadow:0 2px 10px rgba(0,0,0,.06);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    color:var(--ink);
+    background:linear-gradient(180deg,#f5f7f6 0,#f0f4f2 100%);
+    font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif;
+  }
+  header.hero{
+    background:var(--usf-green);
+    color:#fff;
+    padding:28px 20px;
+    position:sticky; top:0; z-index:5;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  .hero h1{margin:0 0 6px;font-size:26px;letter-spacing:.2px}
+  .hero p{margin:0;font-size:14px;opacity:.95}
+  .container{max-width:1200px;margin:22px auto;padding:0 18px}
+  nav.toc{
+    display:flex; flex-wrap:wrap; gap:8px; margin:0 0 18px 0
+  }
+  nav.toc a{
+    text-decoration:none; color:var(--usf-green);
+    background:#e8f4ea; border:1px solid #d5ead7;
+    padding:6px 10px; border-radius:999px; font-size:13px
+  }
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width: 880px){
+    .grid{grid-template-columns:1fr}
+  }
+  .card{
+    background:var(--paper); border-radius:var(--radius);
+    box-shadow:var(--card-shadow);
+    overflow:hidden; border:1px solid #e7ece8;
+  }
+  .card .bar{
+    background:var(--usf-lime);
+    color:#0f2910;
+    padding:8px 12px; font-weight:700; font-size:14px;
+    letter-spacing:.3px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .card .body{padding:14px 16px}
+  .card .body p{margin:0 0 10px 0}
+  .icon{font-size:18px}
+  code, pre{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size:13px;
+  }
+  pre{
+    background:var(--code-bg);
+    padding:12px 12px;
+    border:1px solid #e2e6ea;
+    border-radius:10px;
+    overflow:auto;
+  }
+  .kbd{font-family:inherit;border:1px solid #cfd6cf;border-bottom-width:2px;border-radius:6px;padding:1px 6px;background:#f7faf7}
+  .callout{
+    display:flex; gap:10px; align-items:flex-start;
+    background:#f8fff2; border-left:5px solid var(--usf-lime);
+    padding:10px 12px; border-radius:10px; margin:10px 0;
+    border:1px solid #e5f3da;
+  }
+  .callout .tag{font-weight:700;color:#224a22}
+  .muted{color:var(--muted)}
+  footer{
+    margin:26px auto 40px; max-width:1200px; padding:0 18px; color:var(--muted); font-size:13px
+  }
+  /* Print-friendly */
+  @media print{
+    header.hero{position:static; box-shadow:none}
+    nav.toc{display:none}
+    body{background:#fff}
+    .card{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>Module 1 Cheat Sheet — ISM2411: Python for Business</h1>
+  <p>Dr. Markum Reed • University of South Florida • <span class="muted">Intro to Python &amp; Business Applications</span></p>
+</header>
+
+<div class="container">
+  <nav class="toc">
+    <a href="#vars">Variables &amp; Types</a>
+    <a href="#print">Printing</a>
+    <a href="#math">Arithmetic</a>
+    <a href="#comments">Comments</a>
+    <a href="#debug">Debugging 🐞</a>
+    <a href="#errors">Common Errors 💡</a>
+    <a href="#example">Business Example 📝</a>
+  </nav>
+
+  <div class="grid">
+    <!-- Variables & Types -->
+    <section id="vars" class="card">
+      <div class="bar"><span class="icon">🧩</span> Variables &amp; Data Types</div>
+      <div class="body">
+        <p>Use variables to label values you’ll reuse. Python infers the type from the value.</p>
+<pre><code>company = "USF Analytics"   # str (text)
+employees = 157             # int (whole number)
+salary = 72000.50           # float (decimal)
+profitable = True           # bool (True/False)</code></pre>
+        <div class="callout">
+          <div class="icon">💡</div>
+          <div><span class="tag">Tip:</span> Python is case-sensitive. <code>Revenue</code> ≠ <code>revenue</code>. Use descriptive names like <code>north_revenue</code>.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Printing -->
+    <section id="print" class="card">
+      <div class="bar"><span class="icon">🖨️</span> Printing Output</div>
+      <div class="body">
+        <p><code>print()</code> displays values in the Shell.</p>
+<pre><code>print("Hello, Business World!")
+print("Revenue:", 50000)
+print("Profit Margin:", 0.25 * 100, "%")</code></pre>
+        <div class="callout">
+          <div class="icon">📝</div>
+          <div><span class="tag">Note:</span> Use commas to print text and numbers together. Python inserts spaces for you.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arithmetic -->
+    <section id="math" class="card">
+      <div class="bar"><span class="icon">➗</span> Arithmetic Operators</div>
+      <div class="body">
+        <p><strong>+ − × ÷</strong> for business math.</p>
+<pre><code># + Addition, - Subtraction, * Multiplication, / Division
+revenue = 100000
+costs   =  75000
+profit  = revenue - costs
+print("Profit: $", profit)</code></pre>
+        <div class="callout">
+          <div class="icon">💡</div>
+          <div><span class="tag">Tip:</span> For averages, divide by the count: <code>avg = total / n</code>.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comments -->
+    <section id="comments" class="card">
+      <div class="bar"><span class="icon">#️⃣</span> Comments</div>
+      <div class="body">
+        <p>Use comments to explain intent. Python ignores them when running.</p>
+<pre><code># This is a comment explaining the next line
+print("Hello!")</code></pre>
+        <div class="callout">
+          <div class="icon">📝</div>
+          <div><span class="tag">Note:</span> Great comments explain <em>why</em>, not just what.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Debugging -->
+    <section id="debug" class="card">
+      <div class="bar"><span class="icon">🐞</span> Debugging in Thonny</div>
+      <div class="body">
+        <p>Step through code to see values change and find mistakes.</p>
+        <ol>
+          <li>Click <span class="kbd">🐞 Debug</span> in Thonny.</li>
+          <li>Use step controls to execute line by line.</li>
+          <li>Watch variables in the <strong>Variable Inspector</strong>.</li>
+        </ol>
+        <div class="callout">
+          <div class="icon">💡</div>
+          <div><span class="tag">Tip:</span> If output surprises you, debug. Step to the first “wrong” value.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Errors -->
+    <section id="errors" class="card">
+      <div class="bar"><span class="icon">💡</span> Common Errors &amp; Fixes</div>
+      <div class="body">
+<pre><code># Missing quotes (SyntaxError)
+print(Hello World)          # ❌
+print("Hello World")        # ✅
+
+# Mixing text + numbers with +
+total = 190000
+print("Total: $" + total)   # ❌ TypeError
+print("Total: $", total)    # ✅
+
+# Misspelled variable name (NameError)
+total_revenue = 100000
+print(total_revenu)         # ❌
+print(total_revenue)        # ✅</code></pre>
+        <div class="callout">
+          <div class="icon">📝</div>
+          <div><span class="tag">Note:</span> Read error messages—they usually tell you the exact line and type of error.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Example -->
+    <section id="example" class="card">
+      <div class="bar"><span class="icon">📊</span> Business Mini‑Example</div>
+      <div class="body">
+<pre><code># Q1 sales summary
+jan = 15000
+feb = 18000
+mar = 22000
+
+total_q1 = jan + feb + mar
+avg_q1   = total_q1 / 3
+
+print("Q1 Total:", total_q1)
+print("Q1 Average:", avg_q1)
+print("March > January?", mar > jan)</code></pre>
+        <div class="callout">
+          <div class="icon">💡</div>
+          <div><span class="tag">Tip:</span> Turn this into a function later to reuse across quarters.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- First Program (Optional Showcase) -->
+    <section class="card">
+      <div class="bar"><span class="icon">🚀</span> First Program (Revenue Totals)</div>
+      <div class="body">
+<pre><code>print("Welcome to Business Python!")
+
+north_revenue = 50000
+south_revenue = 40000
+east_revenue  = 45000
+west_revenue  = 55000
+
+total_revenue = north_revenue + south_revenue + east_revenue + west_revenue
+print("Total Revenue: $", total_revenue)</code></pre>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  © 2025 University of South Florida — ISM2411: Python for Business.
+</footer>
+</body>
+</html>
